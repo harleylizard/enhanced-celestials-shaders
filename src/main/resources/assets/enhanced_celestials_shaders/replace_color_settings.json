@@ -4,7 +4,7 @@
     "moon_texture_color": "0xFFFFFF"
   },
   "enhancedcelestials:blood_moon": {
-    "sky_light_color": "0xF2324C",
+    "sky_light_color": "0xFF4460",
     "moon_texture_color": "0xFFFFFF"
   },
   "enhancedcelestials:harvest_moon": {
@@ -20,7 +20,7 @@
     "moon_texture_color": "0xFFFFFF"
   },
   "enhancedcelestials:super_blood_moon": {
-    "sky_light_color": "0xF2324C",
+    "sky_light_color": "0xFF4460",
     "moon_texture_color": "0xFFFFFF"
   },
   "enhancedcelestials:super_harvest_moon": {

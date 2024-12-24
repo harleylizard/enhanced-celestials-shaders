@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+// TODO:: Rewrite for better performance and use ".vglsl" templating.
 public final class ShaderTransformer {
     private static final String VERSION_MACRO = "#version";
 
@@ -24,7 +25,7 @@ public final class ShaderTransformer {
     private String transform330(String source) {
         var outputs = collectOutputs(source);
         if (outputs.size() == 1) {
-            var output = outputs.getFirst();
+            var output = outputs.get(0);
             if (output.type.equals("vec4")) {
                 var name = output.name;
                 var builder = new StringBuilder();
