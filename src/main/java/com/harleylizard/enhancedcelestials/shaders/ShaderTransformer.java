@@ -30,7 +30,7 @@ public final class ShaderTransformer {
                 var builder = new StringBuilder();
                 for (var line : source.split("\n")) {
                     if (line.contains("%s =".formatted(name))) {
-                        line = "%s = %s * vec4(1.0F, 0.25F, 0.25F, 0.0F);".formatted(name, getAssignment(line));
+                        line = "%s = %s * vec4(vec3(1.0F, 0.25F, 0.25F), 1.0F);".formatted(name, getAssignment(line));
                     }
 
                     builder.append(line).append("\n");
@@ -47,7 +47,7 @@ public final class ShaderTransformer {
         for (var line : source.split("\n")) {
             builder.append(line).append("\n");
             if (line.contains(VERSION_MACRO)) {
-                builder.append("uniform vec4 enhancedCelestialsColor;\n");
+                builder.append("uniform vec3 enhancedCelestialsColor;\n");
                 builder.append("uniform sampler2D enhancedCelestialsLightmap;\n");
             }
         }
