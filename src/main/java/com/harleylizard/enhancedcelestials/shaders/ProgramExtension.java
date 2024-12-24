@@ -20,17 +20,14 @@ public final class ProgramExtension {
         lightmap = verifyUniformLocation(glGetUniformLocation(program, "enhancedCelestialsLightmap"));
     }
 
-    public void uploadColor() {
+    public void upload() {
         @Nullable
         var level = Minecraft.getInstance().level;
         if (level != null) {
             var vector3f = getColor(level);
             glUniform3f(color, vector3f.x, vector3f.y, vector3f.z);
+            glUniform1i(lightmap, 2);
         }
-    }
-
-    public void uploadLightmap(int unit) {
-        glUniform1i(lightmap, unit);
     }
 
     public static ProgramExtension of(int program) {

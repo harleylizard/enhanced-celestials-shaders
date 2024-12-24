@@ -23,6 +23,6 @@ public final class ProgramMixin {
 
     @Inject(method = "use", at = @At("TAIL"), remap = false)
     public void harley$use(CallbackInfo ci) {
-        extension.uploadColor();
+        extension.upload();
     }
 }
