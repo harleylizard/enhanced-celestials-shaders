@@ -48,7 +48,7 @@ public final class ProgramExtension {
         @Nullable
         var lunarContext = worldData.getLunarContext();
         if (lunarContext != null) {
-            var t = 1.0F; // TODO:: Lerp between day -> night (ambient color)
+            var t = (float) (dayTime % 24000L) / 24000.0F;
             return ((ShaderLunarForecast) lunarContext.getLunarForecast()).harley$getColorSettings().mix(t);
         }
         return WHITE;
@@ -60,10 +60,5 @@ public final class ProgramExtension {
             // EnhancedCelestials.LOGGER.error("Unable to find uniform location for program.");
         }
         return location;
-    }
-
-    // TODO:: Replace curve function to be parabola and use in interpolation.
-    private static float sigmoid(long x) {
-        return 1.0F / (1.0F + (float) Math.exp(-(float)x));
     }
 }

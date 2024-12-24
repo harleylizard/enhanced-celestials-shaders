@@ -31,7 +31,7 @@ public final class ShaderTransformer {
                 for (var line : source.split("\n")) {
                     if (line.contains("%s =".formatted(name))) {
                         // TODO:: convert lightmap brightness to opacity and multiply by color.
-                        line = "%s = %s * vec4(enhancedCelestialsColor, 1.0F);".formatted(name, getAssignment(line));
+                        line = "%s = %s * min(vec4(enhancedCelestialsColor, 1.0F), maximumLight);".formatted(name, getAssignment(line));
                     }
 
                     builder.append(line).append("\n");
@@ -48,11 +48,11 @@ public final class ShaderTransformer {
         for (var line : source.split("\n")) {
             builder.append(line).append("\n");
             if (line.contains(VERSION_MACRO)) {
+                builder.append("const vec4 maximumLight = vec4(1.0F, 1.0F, 1.0F, 1.0F);\n");
                 builder.append("uniform vec3 enhancedCelestialsColor;\n");
                 builder.append("uniform sampler2D enhancedCelestialsLightmap;\n");
             }
         }
-        System.out.println(builder.toString());
         return builder.toString();
     }
 
