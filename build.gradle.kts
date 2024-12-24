@@ -19,9 +19,13 @@ dependencies {
     modImplementation("net.fabricmc.fabric-api:fabric-api:0.110.0+1.21.1")
 
     modImplementation("maven.modrinth:enhanced-celestials:6.0.1.2-fabric")
-    modImplementation("maven.modrinth:corgilib:1.21.1-5.0.0.3-Fabric")
-    modImplementation("maven.modrinth:sodium:mc1.21.1-0.6.5-fabric")
+    modImplementation("maven.modrinth:sodium:mc1.21.1-0.6.1-fabric")
     modImplementation("maven.modrinth:iris:1.8.1+1.21.1-fabric")
+
+    modApi(fileTree("libs"))
+
+    runtimeOnly("io.github.douira:glsl-transformer:2.0.1")
+    implementation("org.anarres:jcpp:1.4.14")
 
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
