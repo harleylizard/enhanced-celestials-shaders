@@ -5,7 +5,8 @@ import org.joml.Vector3f;
 
 public record Pair(ColorSettings left, ColorSettings right) {
 
+    // Corgi Taco has daytime hard-coded to be neon blue. Replaced with white until solution is done.
     public Vector3f mix(float t) {
-        return left.getGLSkyLightColor().lerp(right.getGLSkyLightColor(), t, new Vector3f());
+        return left.getGLSkyLightColor().lerp(ProgramExtension.WHITE, t, new Vector3f());
     }
 }

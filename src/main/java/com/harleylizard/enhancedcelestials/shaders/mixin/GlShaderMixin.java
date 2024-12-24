@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 public final class GlShaderMixin {
 
     @ModifyArg(method = "createShader", at = @At(value = "INVOKE", target = "Lnet/irisshaders/iris/gl/shader/ShaderWorkarounds;safeShaderSource(ILjava/lang/CharSequence;)V"), index = 1, remap = false)
-    private static CharSequence ec$createShader(CharSequence source) {
+    private static CharSequence harley$createShader(CharSequence source) {
         return new ShaderTransformer().transformVersioned((String) source);
     }
 }
