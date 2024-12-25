@@ -1,6 +1,6 @@
 package com.harleylizard.enhancedcelestials.shaders.mixin;
 
-import com.harleylizard.enhancedcelestials.shaders.ReplaceColorSettings;
+import com.harleylizard.enhancedcelestials.shaders.ColorAdjuster;
 import com.harleylizard.enhancedcelestials.shaders.Pair;
 import com.harleylizard.enhancedcelestials.shaders.ShaderLunarForecast;
 import dev.corgitaco.enhancedcelestials.api.lunarevent.LunarEvent;
@@ -20,7 +20,6 @@ public abstract class LunarForecastMixin implements ShaderLunarForecast {
     public Pair harley$getColorSettings() {
         var left = currentLunarEvent();
         var right = lastLunarEvent();
-        var colorMap = ReplaceColorSettings.SUPPLIER.get();
-        return new Pair(colorMap.get(left), colorMap.get(right));
+        return new Pair(ColorAdjuster.adjustColor(left), ColorAdjuster.adjustColor(right));
     }
 }

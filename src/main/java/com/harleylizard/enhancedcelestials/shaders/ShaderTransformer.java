@@ -25,7 +25,7 @@ public final class ShaderTransformer {
     private String transform330(String source) {
         var outputs = collectOutputs(source);
         if (outputs.size() == 1) {
-            var output = outputs.get(0);
+            var output = outputs.getFirst();
             if (output.type.equals("vec4")) {
                 var name = output.name;
                 var builder = new StringBuilder();
