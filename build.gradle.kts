@@ -25,7 +25,7 @@ dependencies {
     modApi(fileTree("libs"))
 
     runtimeOnly("io.github.douira:glsl-transformer:2.0.1")
-    implementation("org.anarres:jcpp:1.4.14")
+    runtimeOnly("org.anarres:jcpp:1.4.14")
 
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")

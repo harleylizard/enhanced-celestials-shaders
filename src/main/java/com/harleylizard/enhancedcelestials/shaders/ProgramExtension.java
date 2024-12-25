@@ -5,8 +5,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import org.joml.Vector3f;
 
-import javax.annotation.Nullable;
-
 import static org.lwjgl.opengl.GL20.*;
 
 public final class ProgramExtension {
@@ -21,7 +19,6 @@ public final class ProgramExtension {
     }
 
     public void upload() {
-        @Nullable
         var level = Minecraft.getInstance().level;
         if (level != null) {
             var vector3f = getColor(level);
@@ -42,11 +39,11 @@ public final class ProgramExtension {
     }
 
     private static Vector3f getColor(EnhancedCelestialsWorldData worldData, long dayTime) {
-        @Nullable
         var lunarContext = worldData.getLunarContext();
         if (lunarContext != null) {
             var t = (float) (dayTime % 24000L) / 24000.0F;
-            return ((ShaderLunarForecast) lunarContext.getLunarForecast()).harley$getColorSettings().mix(t);
+            var forecast = lunarContext.getLunarForecast();
+            return ((ShaderLunarForecast) forecast).harley$getColorSettings().mix(t, forecast.getBlend());
         }
         return WHITE;
     }

@@ -5,9 +5,12 @@ import org.joml.Vector3f;
 
 public record Pair(ColorSettings left, ColorSettings right) {
 
-    // TODO:: Lerp left and right. White is daylight.
-    public Vector3f mix(float t) {
-        return mix(ProgramExtension.WHITE, left.getGLSkyLightColor(), t);
+    public Vector3f mix(float t, float f) {
+        return mix(ProgramExtension.WHITE, rightLeftMix(f), t);
+    }
+
+    private Vector3f rightLeftMix(float f) {
+        return right.getGLSkyLightColor().lerp(left.getGLSkyLightColor(), f, new Vector3f());
     }
 
     private static Vector3f mix(Vector3f first, Vector3f second, float t) {
