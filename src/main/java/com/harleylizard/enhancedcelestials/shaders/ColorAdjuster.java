@@ -1,15 +1,12 @@
 package com.harleylizard.enhancedcelestials.shaders;
 
-import dev.corgitaco.enhancedcelestials.api.client.ColorSettings;
-import dev.corgitaco.enhancedcelestials.api.lunarevent.LunarEvent;
 import dev.corgitaco.enhancedcelestials.util.ColorUtil;
-import net.minecraft.core.Holder;
 
 public final class ColorAdjuster {
 
     private ColorAdjuster() {}
 
-    private static int adjustColor(int color) {
+    public static int adjustColor(int color) {
         var unpacked = ColorUtil.unpack(color);
         var r = ((float) unpacked[1]) / 255.0F;
         var g = ((float) unpacked[2]) / 255.0F;
@@ -32,10 +29,5 @@ public final class ColorAdjuster {
                 (int) (r * 255.0F) & 0xFF,
                 (int) (g * 255.0F) & 0xFF,
                 (int) (b * 255.0F) & 0xFF);
-    }
-
-    public static ColorSettings adjustColor(Holder<LunarEvent> holder) {
-        var settings = holder.value().getClientSettings().colorSettings();
-        return new ColorSettings(adjustColor(settings.getSkyLightColor()), settings.getMoonTextureColor());
     }
 }
