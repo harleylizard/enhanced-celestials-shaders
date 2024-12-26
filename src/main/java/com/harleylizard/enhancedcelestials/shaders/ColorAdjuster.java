@@ -7,6 +7,9 @@ public final class ColorAdjuster {
     private ColorAdjuster() {}
 
     public static int adjustColor(int color) {
+        if (color == 0x3333FF) {
+            return 0xFFFFFF;
+        }
         var unpacked = ColorUtil.unpack(color);
         var r = ((float) unpacked[1]) / 255.0F;
         var g = ((float) unpacked[2]) / 255.0F;

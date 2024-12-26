@@ -1,6 +1,7 @@
 package com.harleylizard.enhancedcelestials.shaders;
 
 import dev.corgitaco.enhancedcelestials.EnhancedCelestialsWorldData;
+import net.irisshaders.iris.samplers.IrisSamplers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import org.joml.Vector3f;
@@ -11,11 +12,14 @@ public final class ProgramExtension {
     public static final Vector3f WHITE = new Vector3f(1.0F, 1.0F, 1.0F);
 
     private final int color;
-    private final int lightmap;
 
     private ProgramExtension(int program) {
-        color = verifyUniformLocation(glGetUniformLocation(program, "enhancedCelestialsColor"));
-        lightmap = verifyUniformLocation(glGetUniformLocation(program, "enhancedCelestialsLightmap"));
+        color = verifyUniformLocation(glGetUniformLocation(program, Uniforms.SKYLIGHT_COLOR));
+
+        var lightmap = verifyUniformLocation(glGetUniformLocation(program, Uniforms.LIGHTMAP));
+        glUseProgram(program);
+        glUniform1i(lightmap, IrisSamplers.LIGHTMAP_TEXTURE_UNIT);
+        glUseProgram(0);
     }
 
     public void upload() {
@@ -23,7 +27,6 @@ public final class ProgramExtension {
         if (level != null) {
             var vector3f = getColor(level);
             glUniform3f(color, vector3f.x, vector3f.y, vector3f.z);
-            glUniform1i(lightmap, 2);
         }
     }
 
