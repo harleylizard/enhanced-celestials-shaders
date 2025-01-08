@@ -50,7 +50,7 @@ public final class Source {
     }
 
     public int version() {
-        var line = lines.getFirst();
+        var line = lines.get(0);
         var i = line.indexOf(VERSION_MACRO) + VERSION_MACRO.length() + 1;
 
         return toInt(line.substring(i, line.indexOf(" ", i)));

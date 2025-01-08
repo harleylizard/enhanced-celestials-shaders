@@ -1,6 +1,6 @@
 package com.harleylizard.enhancedcelestials.shaders;
 
-import dev.corgitaco.enhancedcelestials.EnhancedCelestials;
+import corgitaco.enhancedcelestials.EnhancedCelestials;
 
 public final class ShaderTransformer {
     private final Source source;
@@ -15,7 +15,7 @@ public final class ShaderTransformer {
         if (version >= 330) {
             var outputs = source.outputs();
             if (outputs.size() == 1) {
-                var first = outputs.getFirst();
+                var first = outputs.get(0);
                 if (first.type().equals("vec4")) transformFragment(first.name());
             }
         }

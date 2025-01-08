@@ -2,9 +2,9 @@ package com.harleylizard.enhancedcelestials.shaders.mixin;
 
 import com.harleylizard.enhancedcelestials.shaders.Pair;
 import com.harleylizard.enhancedcelestials.shaders.ShaderLunarForecast;
-import dev.corgitaco.enhancedcelestials.api.client.ColorSettings;
-import dev.corgitaco.enhancedcelestials.api.lunarevent.LunarEvent;
-import dev.corgitaco.enhancedcelestials.lunarevent.LunarForecast;
+import corgitaco.enhancedcelestials.api.client.ColorSettings;
+import corgitaco.enhancedcelestials.api.lunarevent.LunarEvent;
+import corgitaco.enhancedcelestials.lunarevent.LunarForecast;
 import net.minecraft.core.Holder;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

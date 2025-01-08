@@ -1,6 +1,6 @@
 package com.harleylizard.enhancedcelestials.shaders;
 
-import dev.corgitaco.enhancedcelestials.EnhancedCelestialsWorldData;
+import corgitaco.enhancedcelestials.EnhancedCelestialsWorldData;
 import net.irisshaders.iris.samplers.IrisSamplers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;

@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.harleylizard"
-version = "1.21.1+1.1-SNAPSHOT"
+version = "1.20.1+1.1-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -12,16 +12,15 @@ repositories {
 }
 
 dependencies {
-    minecraft("com.mojang:minecraft:1.21.1")
+    minecraft("com.mojang:minecraft:1.20.1")
     mappings(loom.officialMojangMappings())
 
     modImplementation("net.fabricmc:fabric-loader:0.16.9")
-    modImplementation("net.fabricmc.fabric-api:fabric-api:0.110.0+1.21.1")
+    modImplementation("net.fabricmc.fabric-api:fabric-api:0.92.3+1.20.1")
 
-    modImplementation("maven.modrinth:enhanced-celestials:6.0.1.2-fabric")
-    modImplementation("maven.modrinth:sodium:mc1.21.1-0.6.1-fabric")
-    modImplementation("maven.modrinth:iris:1.8.1+1.21.1-fabric")
-
+    modImplementation("maven.modrinth:enhanced-celestials:1.20.1-5.0.2.3-fabric")
+    modImplementation("maven.modrinth:sodium:mc1.20.1-0.5.11-fabric")
+    modImplementation("maven.modrinth:iris:1.7.5+1.20.1-fabric")
     modApi(fileTree("libs"))
 
     runtimeOnly("io.github.douira:glsl-transformer:2.0.1")
@@ -31,15 +30,27 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
+configurations.all {
+    resolutionStrategy {
+        force("org.lwjgl:lwjgl:3.3.1")
+        force("org.lwjgl:lwjgl-glfw:3.3.1")
+        force("org.lwjgl:lwjgl-jemalloc:3.3.1")
+        force("org.lwjgl:lwjgl-openal:3.3.1")
+        force("org.lwjgl:lwjgl-opengl:3.3.1")
+        force("org.lwjgl:lwjgl-stb:3.3.1")
+        force("org.lwjgl:lwjgl-tinyfd:3.3.1")
+    }
+}
+
 tasks.test {
     useJUnitPlatform()
 }
 
 java {
     withSourcesJar()
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }

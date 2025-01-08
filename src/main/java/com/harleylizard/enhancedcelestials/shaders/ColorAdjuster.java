@@ -1,6 +1,6 @@
 package com.harleylizard.enhancedcelestials.shaders;
 
-import dev.corgitaco.enhancedcelestials.util.ColorUtil;
+import corgitaco.enhancedcelestials.util.ColorUtil;
 
 public final class ColorAdjuster {
 

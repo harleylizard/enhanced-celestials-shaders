@@ -25,11 +25,11 @@
   ],
   "depends": {
     "fabricloader": ">=0.16.9",
-    "minecraft": "~1.21.1",
+    "minecraft": "~1.20.1",
     "java": ">=17",
     "fabric-api": "*",
-    "enhancedcelestials": ">=6.0.1.2",
-    "iris": ">=1.8.1+mc1.21.1"
+    "enhancedcelestials": ">=1.20.1-5.0.2.3",
+    "iris": ">=1.7.5+mc1.20.1"
   },
   "suggests": {
     "another-mod": "*"

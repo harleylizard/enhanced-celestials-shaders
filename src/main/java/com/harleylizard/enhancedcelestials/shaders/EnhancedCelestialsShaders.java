@@ -11,6 +11,6 @@ public final class EnhancedCelestialsShaders implements ClientModInitializer {
     }
 
     public static ResourceLocation resourceLocation(String name) {
-        return ResourceLocation.fromNamespaceAndPath(MOD_ID, name);
+        return new ResourceLocation(MOD_ID, name);
     }
 }
