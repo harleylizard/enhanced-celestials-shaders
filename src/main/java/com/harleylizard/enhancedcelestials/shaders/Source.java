@@ -32,7 +32,7 @@ public final class Source {
         clean();
         var regex = formatter.format("%s = ", name).toString();
         var j = -1;
-        for (var i = 0; i < lines.size(); i++) {
+        for (var i = lines.size() - 1; i > 0; i--) {
             if (lines.get(i).contains(regex)) {
                 j = i;
                 break;
