@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "enhanced_celestials_shaders",
+  "id": "enhanced-celestials-shaders",
   "version": "${version}",
   "name": "Enhanced Celestials Shaders",
   "description": "",
@@ -13,11 +13,11 @@
     "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
   "license": "All rights reserved. 2024-2025 harleylizard",
-  "icon": "assets/enhanced_celestials_shaders/icon.png",
+  "icon": "assets/enhanced-celestials-shaders/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
-      "com.harleylizard.enhancedcelestials.shaders.EnhancedCelestialsShaders"
+      "com.harleyliard.shader.support.EnhancedCelestialsShaderSupport"
     ]
   },
   "mixins": [

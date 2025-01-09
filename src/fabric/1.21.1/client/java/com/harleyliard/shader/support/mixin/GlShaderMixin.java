@@ -1,6 +1,6 @@
-package com.harleylizard.enhancedcelestials.shaders.mixin;
+package com.harleyliard.shader.support.mixin;
 
-import com.harleylizard.enhancedcelestials.shaders.ShaderTransformer;
+import com.harleyliard.shader.support.ShaderTransformer;
 import net.irisshaders.iris.gl.shader.GlShader;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

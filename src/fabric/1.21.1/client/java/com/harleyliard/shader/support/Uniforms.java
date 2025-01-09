@@ -1,4 +1,4 @@
-package com.harleylizard.enhancedcelestials.shaders;
+package com.harleyliard.shader.support;
 
 public final class Uniforms {
     public static final String SKYLIGHT_COLOR = "ecSkylightColor";

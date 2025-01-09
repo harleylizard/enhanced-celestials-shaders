@@ -1,6 +1,6 @@
-package com.harleylizard.enhancedcelestials.shaders.mixin;
+package com.harleyliard.shader.support.mixin;
 
-import com.harleylizard.enhancedcelestials.shaders.ProgramExtension;
+import com.harleyliard.shader.support.ProgramExtension;
 import net.irisshaders.iris.gl.program.Program;
 import net.irisshaders.iris.gl.program.ProgramImages;
 import net.irisshaders.iris.gl.program.ProgramSamplers;

@@ -1,7 +1,7 @@
-package com.harleylizard.enhancedcelestials.shaders.mixin;
+package com.harleyliard.shader.support.mixin;
 
-import com.harleylizard.enhancedcelestials.shaders.Pair;
-import com.harleylizard.enhancedcelestials.shaders.ShaderLunarForecast;
+import com.harleyliard.shader.support.Pair;
+import com.harleyliard.shader.support.ShaderLunarForecast;
 import dev.corgitaco.enhancedcelestials.api.client.ColorSettings;
 import dev.corgitaco.enhancedcelestials.api.lunarevent.LunarEvent;
 import dev.corgitaco.enhancedcelestials.lunarevent.LunarForecast;

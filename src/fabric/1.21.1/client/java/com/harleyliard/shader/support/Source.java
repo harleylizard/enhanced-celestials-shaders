@@ -1,4 +1,4 @@
-package com.harleylizard.enhancedcelestials.shaders;
+package com.harleyliard.shader.support;
 
 import java.util.*;
 

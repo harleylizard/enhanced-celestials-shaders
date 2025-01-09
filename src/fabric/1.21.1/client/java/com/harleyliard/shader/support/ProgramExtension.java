@@ -1,4 +1,4 @@
-package com.harleylizard.enhancedcelestials.shaders;
+package com.harleyliard.shader.support;
 
 import dev.corgitaco.enhancedcelestials.EnhancedCelestialsWorldData;
 import net.irisshaders.iris.samplers.IrisSamplers;

@@ -1,10 +1,10 @@
-package com.harleylizard.enhancedcelestials.shaders;
+package com.harleyliard.shader.support;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.resources.ResourceLocation;
 
-public final class EnhancedCelestialsShaders implements ClientModInitializer {
-    private static final String MOD_ID = "enhanced_celestials_shaders";
+public final class EnhancedCelestialsShaderSupport implements ClientModInitializer {
+    private static final String MOD_ID = "enhanced-celestials-shaders";
 
     @Override
     public void onInitializeClient() {

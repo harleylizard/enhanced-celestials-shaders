@@ -3,6 +3,7 @@ pluginManagement {
 		maven("https://maven.fabricmc.net/")
 		mavenCentral()
 		gradlePluginPortal()
+		maven(url = "https://maven.msrandom.net/repository/root")
 	}
 }
 
