@@ -1,7 +1,7 @@
 package com.harleylizard.enhancedcelestials.shaders;
 
-import corgitaco.enhancedcelestials.api.client.ColorSettings;
-import corgitaco.enhancedcelestials.util.ColorUtil;
+import dev.corgitaco.enhancedcelestials.api.client.ColorSettings;
+import dev.corgitaco.enhancedcelestials.util.ColorUtil;
 import org.joml.Vector3f;
 
 public record Pair(ColorSettings left, ColorSettings right) {

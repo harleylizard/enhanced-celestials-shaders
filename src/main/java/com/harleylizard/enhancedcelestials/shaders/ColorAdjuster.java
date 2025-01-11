@@ -1,6 +1,6 @@
 package com.harleylizard.enhancedcelestials.shaders;
 
-import corgitaco.enhancedcelestials.util.ColorUtil;
+import dev.corgitaco.enhancedcelestials.util.ColorUtil;
 
 public final class ColorAdjuster {
 
@@ -17,12 +17,13 @@ public final class ColorAdjuster {
 
         var max = Math.max(Math.max(r, g), b);
 
-        var brightness = 0.0F;
+        var config = ColorAdjusterConfig.SUPPLIER.get();
+        var brightness = config.getBrightness();
         r += brightness;
         g += brightness;
         b += brightness;
 
-        var grayness = 127.0F / 255.0F;
+        var grayness = config.getGrayness();
         r += max >= r ? 0.0F : grayness;
         g += max >= g ? 0.0F : grayness;
         b += max >= b ? 0.0F : grayness;

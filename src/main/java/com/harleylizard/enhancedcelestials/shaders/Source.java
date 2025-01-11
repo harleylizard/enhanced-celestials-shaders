@@ -32,7 +32,7 @@ public final class Source {
         clean();
         var regex = formatter.format("%s = ", name).toString();
         var j = -1;
-        for (var i = 0; i < lines.size(); i++) {
+        for (var i = lines.size() - 1; i > 0; i--) {
             if (lines.get(i).contains(regex)) {
                 j = i;
                 break;
@@ -50,7 +50,7 @@ public final class Source {
     }
 
     public int version() {
-        var line = lines.get(0);
+        var line = lines.getFirst();
         var i = line.indexOf(VERSION_MACRO) + VERSION_MACRO.length() + 1;
 
         return toInt(line.substring(i, line.indexOf(" ", i)));
