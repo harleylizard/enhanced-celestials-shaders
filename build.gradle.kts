@@ -32,6 +32,9 @@ cloche {
         }
     }
 
+    val common = common("allCommon") {
+    }
+
     targets.withType<FabricTarget> {
         loaderVersion = "0.16.9"
         client()
@@ -40,6 +43,7 @@ cloche {
 
     fabric("fabric:1.20.1") {
         minecraftVersion = "1.20.1"
+        dependsOn(common)
         dependencies {
             fabricApi("0.92.3+1.20.1")
             modImplementation("maven.modrinth:enhanced-celestials:1.20.1-5.0.2.3-fabric")
@@ -50,6 +54,7 @@ cloche {
 
     fabric("fabric:1.21.1") {
         minecraftVersion = "1.21.1"
+        dependsOn(common)
         dependencies {
             fabricApi("0.110.0+1.21.1")
             modImplementation("maven.modrinth:enhanced-celestials:6.0.1.2-fabric")
@@ -61,11 +66,13 @@ cloche {
     forge("forge:1.20.1") {
         minecraftVersion = "1.20.1"
         loaderVersion = "47.1.3"
+        dependsOn(common)
     }
 
     neoforge("neoforge:1.21.1") {
         minecraftVersion = "1.21.1"
         loaderVersion = "21.1.90"
+        dependsOn(common)
     }
 }
 
