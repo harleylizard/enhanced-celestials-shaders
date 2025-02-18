@@ -2,7 +2,8 @@ import earth.terrarium.cloche.target.FabricTarget
 
 plugins {
     id("java")
-    id("earth.terrarium.cloche") version "0.7.2"
+    id("earth.terrarium.cloche") version "0.7.3"
+    kotlin("jvm") version "2.1.0"
 }
 
 group = "com.harleylizard"
@@ -70,12 +71,6 @@ cloche {
 
 java {
     withSourcesJar()
-
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
 }
 
 tasks.test {
