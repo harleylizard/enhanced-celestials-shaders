@@ -1,3 +1,6 @@
+import soul.software.snail.dependency.exclusiveMaven
+import soul.software.snail.dependency.snail
+
 plugins {
     id("soul.software.snail") version "3.1-SNAPSHOT"
 }
@@ -15,7 +18,7 @@ dependencies {
 }
 
 snail {
-    multiple("1.21.1") {
+    multiple("1.21.4") {
         properties {
             name = "Enhanced Celestials Shader Support"
             id = "enhanced-celestials-shader-support"
@@ -42,5 +45,16 @@ snail {
         project(":neoforge") {
             neoForge()
         }
+    }
+}
+
+subprojects {
+    repositories {
+        maven("https://api.modrinth.com/maven/")
+    }
+
+    dependencies {
+        runtimeOnly("io.github.douira:glsl-transformer:2.0.1")
+        runtimeOnly("org.anarres:jcpp:1.4.14")
     }
 }
